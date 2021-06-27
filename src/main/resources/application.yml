@@ -1,0 +1,43 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: delivery-cost-calculator
+  #Datasource
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+
+  #Jackson
+  jackson:
+    default-property-inclusion: non_null
+
+#Feign Logging
+logging:
+  level:
+    com:
+      mynt:
+        calculator:
+          deliverycost:
+            integration:
+              VoucherClient: DEBUG
+
+#Third Party
+integration:
+  voucher:
+    url: https://mynt-exam.mocklab.io
+
