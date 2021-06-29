@@ -128,6 +128,7 @@ public class DeliveryCostCalculatorServiceTest {
     private List<Rule> createRules() {
         return Arrays.asList(
                 Rule.builder()
+                        .isActive(true)
                         .condition(Condition.builder()
                                 .paramType(ParamTypeCodelist.builder()
                                         .paramCode(ParamType.WGT)
@@ -148,6 +149,7 @@ public class DeliveryCostCalculatorServiceTest {
                                 .build())
                         .build(),
                 Rule.builder()
+                        .isActive(true)
                         .condition(Condition.builder()
                                 .paramType(ParamTypeCodelist.builder()
                                         .paramCode(ParamType.VOL)

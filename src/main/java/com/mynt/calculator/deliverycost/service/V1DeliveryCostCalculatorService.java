@@ -29,7 +29,8 @@ public class V1DeliveryCostCalculatorService implements DeliveryCostCalculatorSe
         List<Rule> rules = ruleRepository.getAllByOrderByPriorityAsc();
 
         Double deliveryCost = rules.stream()
-                .filter(rule -> evaluateCondition(orderRequest.getParcel(), rule.getCondition()))
+                .filter(rule -> evaluateCondition(orderRequest.getParcel(), rule.getCondition())
+                        && rule.getIsActive())
                 .peek(rule -> log.info("Parcel falls under {}", rule.getRuleName()))
                 .map(rule -> executeCostExpression(orderRequest.getParcel(), rule.getCostExpression()))
                 .findFirst()
