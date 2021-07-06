@@ -29,11 +29,11 @@ public class Rule {
     @Column(name = "name_rule")
     private String ruleName;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "id_condition", referencedColumnName = "id_condition")
     private Condition condition;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "id_cost_expression", referencedColumnName = "id_cost_expression")
     private CostExpression costExpression;
 

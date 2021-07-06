@@ -25,11 +25,11 @@ public class Condition {
     @Column(name = "id_condition", nullable = false, unique = true, updatable = false)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn (name = "id_param_type")
     private ParamTypeCodelist paramType;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn (name = "id_relational_operation")
     private RelationalOperationCodelist relationalOperationId;
 

@@ -25,11 +25,11 @@ public class CostExpression {
     @Column(name = "id_cost_expression", nullable = false, unique = true, updatable = false)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn (name = "id_param_type")
     private ParamTypeCodelist paramType;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn (name = "id_arithmetic_operation")
     private ArithmeticOperationCodelist arithmeticOperation;
 
