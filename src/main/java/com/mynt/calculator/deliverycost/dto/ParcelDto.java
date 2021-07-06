@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
@@ -14,15 +15,19 @@ import javax.validation.constraints.NotNull;
 public class ParcelDto {
 
     @NotNull
+    @Min(0)
     private Double height;
 
     @NotNull
+    @Min(0)
     private Double width;
 
     @NotNull
+    @Min(0)
     private Double length;
 
     @NotNull
+    @Min(0)
     private Double weight;
 
     public Double getVolume() {
